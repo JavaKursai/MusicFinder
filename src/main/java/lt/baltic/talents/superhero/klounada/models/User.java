@@ -26,12 +26,12 @@ public class User implements Serializable {
 	private char[] songName;
 
 	@Column(name = "SONG_POPULARITY")
-	private Long popularity;
+	private int popularity;
 
 	public User() {
 	}
 
-	public User(String author, char[] songName, Long popularity) {
+	public User(String author, char[] songName, int popularity) {
 		this.author = author;
 		this.songName = songName.clone();
 		this.popularity = popularity;
@@ -61,11 +61,11 @@ public class User implements Serializable {
 		this.songName = songName;
 	}
 
-	public Long getPopularity() {
+	public int getPopularity() {
 		return popularity;
 	}
 
-	public void setPopularity(Long popularity) {
+	public void setPopularity(int popularity) {
 		this.popularity = popularity;
 	}
 

@@ -4,9 +4,9 @@ public class Profile {
 
 	private String author;
 	private String songName;
-	private String popularity;
+	private int popularity;
 
-	public Profile(String author, String songName, String popularity) {
+	public Profile(String author, String songName, int popularity) {
 		this.author = author;
 		this.songName = songName;
 		this.popularity = popularity;
@@ -28,11 +28,11 @@ public class Profile {
 		this.songName = songName;
 	}
 
-	public String getPopularity() {
+	public int getPopularity() {
 		return popularity;
 	}
 
-	public void setPopularity(String popularity) {
+	public void setPopularity(int popularity) {
 		this.popularity = popularity;
 	}
 
