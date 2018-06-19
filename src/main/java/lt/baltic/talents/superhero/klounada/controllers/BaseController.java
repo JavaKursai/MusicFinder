@@ -21,7 +21,7 @@ public class BaseController {
 	@Autowired
 	private MessageHelper helper;
 
-	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String start(@ModelAttribute("filtras") String filtras, Model model) {
 		LocalDateTime date = LocalDateTime.now();
 		model.addAttribute("now", Date.from(date.atZone(ZoneId.systemDefault()).toInstant()));
