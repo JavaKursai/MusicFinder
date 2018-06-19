@@ -4,6 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -22,19 +23,30 @@
             </div>
         </header>
         <section class="Label">
-            <p>Pasirinkite paieskos buda:</p>
+            <br>
+            <br>
+            <div class="blokas">
+            <p>Pasirinkite paieškos būdą:</p>
+            
+            
+            <br>
             <form>
+                    <div class="BendraPaieska">
+                    <input id="sersas" name="Search" placeholder="Paieska" type=""/><button type="button">kaip as jusu nekenciu</button>
+                </div>
+                <br>
+                <br>
+                
                 <select class="selectBox" >
+                    <option value="0" >Pagal ka rusiuot</option>
                     <option value="1">Bendra paieska</option>
                     <option value="2">Dainos pavadinimas
                     </option>
                     <option value="3">Autorius/Grupe</option>
                 </select>
+            
             </form>
-            <form>
-                    <label>Search</label>
-                    <input id="sersas" name="" type=""/>
-            </form>
+        </div>
         </section>
         <footer id="Endas">
                 <h1>Projekta ruose</h1>
