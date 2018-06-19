@@ -11,25 +11,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TBL_USERS")
+@Table(name = "TBL_SONGS")
 public class User implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "USER_ID")
+	@Column(name = "SONG_ID")
 	private Long id;
 
-	@Column(name = "USER_LOGIN", unique = true)
-	private String login;
-	
-	@Column(name = "USER_PWD")
-	private char[] pwd;
-	
-	public User() {}
+	@Column(name = "AUTHOR_NAME", unique = true)
+	private String author;
 
-	public User(String login, char[] pwd) {
-		this.login = login;
-		this.pwd = pwd.clone();
+	@Column(name = "SONG_NAME")
+	private char[] songName;
+
+	@Column(name = "SONG_POPULARITY")
+	private Long popularity;
+
+	public User() {
+	}
+
+	public User(String author, char[] songName, Long popularity) {
+		this.author = author;
+		this.songName = songName.clone();
+		this.popularity = popularity;
 	}
 
 	public Long getId() {
@@ -40,24 +45,33 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
-	public char[] getPwd() {
-		return pwd;
+	public char[] getSongName() {
+		return songName;
 	}
 
-	public void setPwd(char[] pwd) {
-		this.pwd = pwd;
+	public void setSongName(char[] songName) {
+		this.songName = songName;
+	}
+
+	public Long getPopularity() {
+		return popularity;
+	}
+
+	public void setPopularity(Long popularity) {
+		this.popularity = popularity;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", login=" + login + ", pwd=" + Arrays.toString(pwd) + "]";
+		return "User [id=" + id + ", author=" + author + ", songName=" + Arrays.toString(songName) + ", popularity="
+				+ popularity + "]";
 	}
 }
