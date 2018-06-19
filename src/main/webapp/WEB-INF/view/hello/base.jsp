@@ -5,7 +5,8 @@
 
 <html>
 <head>
-	<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
+	<%--<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">--%>
+	<link href="<c:url value="/resources/css/Muzika.css" />" rel="stylesheet">
 	
     <title><spring:message code="message.title" /></title>
 </head>
