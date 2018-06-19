@@ -14,36 +14,36 @@ import lt.baltic.talents.superhero.klounada.services.UserService;
 @Controller
 @RequestMapping("/login")
 public class LoginController {
-	
+
 	@Autowired
-    private UserService userService;
-	
+	private UserService userService;
+
 	@RequestMapping(value = "testCreate", method = RequestMethod.GET)
 	public String login(Model model) {
-		userService.create(new User("OOOOO", "xzxzcxzcxzc".toCharArray()));
-		
+		userService.create(new User("OOOOO", "xzxzcxzcxzc".toCharArray(), 456));
+
 		return "login/failure";
 	}
-	
+
 	@RequestMapping(method = RequestMethod.GET)
-	public String login(Model model, 
-			@RequestParam(value = "user", required = false) String userParam,
-			@RequestParam(value = "pwd", required = false) String pwd, RedirectAttributes redirectAttributes) {
-		
-		if (userParam == null || pwd == null) { 
-			return "login/failure"; 
+	public String login(Model model, @RequestParam(value = "author", required = false) String authorParam,
+			@RequestParam(value = "songName", required = false) String songParam, RedirectAttributes redirectAttributes,
+			@RequestParam(value = "popularity", required = false) int popularityParam) {
+
+		if (songParam == null || songParam == null) {
+			return "Can't find your request or nothing was typed in";
 		}
-		
-		User user = new User(userParam, pwd.toCharArray());
-		
+
+		User user = new User(authorParam, songParam.toCharArray(), popularityParam);
+
 		boolean login = userService.login(user);
-		
+
 		if (login) {
 			redirectAttributes.addFlashAttribute("user", user);
 			return "redirect:/";
 		}
-		
-		return "login/failure";
+
+		return "Can't find your request or nothing was typed in";
 	}
 
 }

@@ -33,8 +33,8 @@ public class UserDaoImpl implements UserDao {
 		@SuppressWarnings("unchecked")
 		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where login = ?1 and pwd = ?2");
 		
-		query.setParameter(1, user.getLogin());
-		query.setParameter(2, user.getPwd());
+		query.setParameter(1, user.getAuthor());
+		query.setParameter(2, user.getSongName());
 		
 		List<User> users = query.getResultList();
 		
