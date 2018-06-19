@@ -3,55 +3,48 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<html>
-<head>
-	<%--<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">--%>
-	<link href="<c:url value="/resources/css/Muzika.css" />" rel="stylesheet">
-	
-    <title><spring:message code="message.title" /></title>
-</head>
-<body>
-	<c:if test="${not empty user}">
-		<article>
-			<h1><spring:message code="message.welcome" /></h1>
-			
-			<p class="subtitle fancy">
-		    	<span>
-		    		<c:if test="${not empty user.login}">
-		    			${user.login}
-		    		</c:if>
-		    	</span>
-		    </p>
-		</article>
-	</c:if>
-	
-	<article>	
-	    <h1><spring:message code="message.language_example" /></h1>
-	
-	    <p class="subtitle fancy">
-	    	<span>
-	    		<spring:message code="message.language" /> : 
-	    		<a href="?lang=en"><spring:message code="message.english" /></a> | 
-	    		<a href="?lang=lt"><spring:message code="message.lithuanian" /></a>
-	    	</span>
-	    </p>
-	
-	    <p><spring:message code="message.hello" /></p>
-	    
-	    <p>
-	    	<spring:message code="message.time_now" /> : <fmt:formatDate type = "both" value = "${now}" />
-	    </p>
-	</article>
-	<article>
-		<h1><spring:message code="message.operating_system" /></h1>
-		
-		<p class="subtitle fancy">
-	    	<span>${operatingSystem}</span>
-	    </p>
-	    
-	    <p><spring:message code="message.java_version" />
-	    	<span>${javaVersion}</span>
-	    </p>
-	</article>
-</body>
-</html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="descprition" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Pixel Perfect</title>
+        <link rel="stylesheet" href="Muzik.css">
+        <link href="<c:url value="/resources/css/Muzik.css" />" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="container">
+                <div class="title"><h1>Muzika privalo išskelti ugnį iš žmogaus sielos.Muzika negali mąstyti, bet ji gali įkūnyti mintį</h1></div>
+                
+            </div>
+        </header>
+        <section class="Label">
+            <p>Pasirinkite paieskos buda:</p>
+            <form>
+                <select class="selectBox" >
+                    <option value="1">Bendra paieska</option>
+                    <option value="2">Dainos pavadinimas
+                    </option>
+                    <option value="3">Autorius/Grupe</option>
+                </select>
+            </form>
+            <form>
+                    <label>Search</label>
+                    <input id="sersas" name="" type=""/>
+            </form>
+        </section>
+        <footer id="Endas">
+                <h1>Projekta ruose</h1>
+        </footer>
+            
+            
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+            
+        <script src="testas.js"></script>
+        <script type="jsCookie.js"></script>
+        <script src="jquery3.js"></script>    
+        </body>
+    </html>
