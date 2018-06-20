@@ -23,6 +23,7 @@ public class LoginController {
 		//userService.create(new User("OOOOO", "xzxzcxzcxzc".toCharArray(), 456));
 		boolean login = userService.login();
 		return "login/failure";
+		//nigalima
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
