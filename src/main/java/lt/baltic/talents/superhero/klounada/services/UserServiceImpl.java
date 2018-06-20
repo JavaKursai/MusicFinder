@@ -1,5 +1,7 @@
 package lt.baltic.talents.superhero.klounada.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,14 +17,21 @@ public class UserServiceImpl implements UserService {
 
 	@Transactional(readOnly = true)
 	@Override
-	public boolean login(User user) {
-		return userDao.login(user);
+	public boolean login() {
+		userDao.getList();
+		return false;
 	}
 
 	@Transactional
 	@Override
 	public boolean create(User user) {
 		return userDao.create(user);
+	}
+	
+	@Transactional(readOnly = true)
+	@Override
+	public List<User> getList() {
+		return userDao.getList();
 	}
 
 }
