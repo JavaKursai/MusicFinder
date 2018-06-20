@@ -35,26 +35,26 @@
             <br>
             <form>
                     <div class="BendraPaieska">
-<<<<<<< HEAD
+
                     <input id="sersas" name="sersas" placeholder="Paieska" type="text"/><button type="button">kaip as jusu nekenciu</button>
-=======
+
                     <input id="sersas" name="Search" placeholder="Paieška" type=""/><button type="button">Eik!</button></input>
->>>>>>> feature/1
+
                 </div>
                 <br>
                 <br>
                 
                 <select class="selectBox" >
-<<<<<<< HEAD
+
 	                    <option value="0" >Pagal ka rusiuot
 	                    </option>
                     <option value="1">Bendra paieska</option>
                     <option value="2">Dainos pavadinimas ${profile.songName}
-=======
+
                     <option value="0" >Pagal ką rūšiuot</option>
                     
                     <option value="2">Dainos pavadinimas
->>>>>>> feature/1
+
                     </option>
                     <option value="3">Autorius/Grupe</option>
                 </select>
