@@ -8,4 +8,11 @@ public interface UserService {
 
 	boolean create(User user);
 
+<<<<<<< HEAD
+=======
+	List<User> getList();
+	
+	void searchByInput(String input);
+
+>>>>>>> master
 }

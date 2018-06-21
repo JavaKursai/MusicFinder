@@ -8,4 +8,15 @@ public interface UserDao {
 	
 	boolean create(User user);
 
+<<<<<<< HEAD
+=======
+	public List<User> getList();
+	
+	public List<User> getByAuthor();
+	
+	public List<User> getBySongName(String input);
+	
+	
+	
+>>>>>>> master
 }

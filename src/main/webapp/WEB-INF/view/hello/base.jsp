@@ -1,9 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,6 +28,7 @@
             
             
             <br>
+<<<<<<< HEAD
             <form>
                     <div class="BendraPaieska">
                     <input id="sersas" name="Search" placeholder="Paieska" type=""/><button type="button">kaip as jusu nekenciu</button>
@@ -39,13 +38,25 @@
                 
                 <select class="selectBox" >
                     <option value="0" >Pagal ka rusiuot</option>
+=======
+            <form:form action="sersas" modelAttribute="filtras" method="POST">
+             <form:label path="inputText">jhhh</form:label>
+            <form:input path="inputText" /> <br><br>
+            
+             <input type="submit" value="Submit"/>
+            </form:form>
+            
+            <select class="selectBox" >
+
+	                    <option value="0" >Pagal ka rusiuot
+	                    </option>
+>>>>>>> master
                     <option value="1">Bendra paieska</option>
                     <option value="2">Dainos pavadinimas
                     </option>
                     <option value="3">Autorius/Grupe</option>
                 </select>
             
-            </form>
         </div>
         </section>
         <footer id="Endas">
