@@ -48,7 +48,6 @@ public class UserDaoImpl implements UserDao {
 		
 		return false;
 	}
-<<<<<<< HEAD
 	
 	@Override
 	public List<User> getList() {
@@ -92,8 +91,6 @@ public class UserDaoImpl implements UserDao {
 	}
 
 
-=======
->>>>>>> MP-versija
 
 
 	
