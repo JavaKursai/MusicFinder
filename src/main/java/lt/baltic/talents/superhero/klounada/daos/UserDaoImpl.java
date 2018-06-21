@@ -10,12 +10,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import lt.baltic.talents.superhero.klounada.models.User;
+import lt.baltic.talents.superhero.klounada.services.UserService;
+import lt.baltic.talents.superhero.klounada.services.UserServiceImpl;
 
 @Repository
 public class UserDaoImpl implements UserDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	private UserService userService;
 	
 	@Override
 	public boolean create(User user) {
@@ -45,6 +49,7 @@ public class UserDaoImpl implements UserDao {
 		return false;
 	}
 	
+	@Override
 	public List<User> getList() {
 		@SuppressWarnings("unchecked")
 		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User order by popularity desc");
@@ -54,5 +59,40 @@ public class UserDaoImpl implements UserDao {
 		}
 		return listas;
 	}
+	
+	@Override
+	public List<User> getByAuthor() {
+		@SuppressWarnings("unchecked")
+		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where author = ?1 order by popularity desc");
+		
+		//query.setParameter(1, input);
+		
+		List<User> listas = query.getResultList();
+		for(User a: listas) {
+			System.out.println(a.toString());
+		}
+		return null;
+	}
 
+
+	
+	@Override
+	public List<User> getBySongName(String input) {
+		@SuppressWarnings("unchecked")
+		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where songName = ?1 order by popularity desc");
+		
+		query.setParameter(1, input);
+		
+		List<User> listas = query.getResultList();
+		for(User a: listas) {
+			System.out.println(a.toString());
+		}
+		return listas;
+	}
+
+
+
+
+	
+	
 }

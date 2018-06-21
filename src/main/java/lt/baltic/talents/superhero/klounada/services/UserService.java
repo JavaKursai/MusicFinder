@@ -11,5 +11,7 @@ public interface UserService {
 	boolean create(User user);
 
 	List<User> getList();
+	
+	void searchByInput(String input);
 
 }
