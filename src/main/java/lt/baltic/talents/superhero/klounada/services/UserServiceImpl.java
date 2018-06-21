@@ -16,13 +16,18 @@ public class UserServiceImpl implements UserService {
 	@Transactional(readOnly = true)
 	@Override
 	public boolean login(User user) {
+//		userDao.getAll();
 		return userDao.login(user);
+		
 	}
 
 	@Transactional
 	@Override
 	public boolean create(User user) {
+		
 		return userDao.create(user);
 	}
+
+	
 
 }

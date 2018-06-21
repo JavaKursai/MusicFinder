@@ -44,5 +44,17 @@ public class UserDaoImpl implements UserDao {
 		
 		return false;
 	}
+	
+//	public void getAll() {
+//		
+//		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("select * from TBL_SONGS");
+//		
+//		List<User> songs = query.getResultList();
+//		
+//		for (User vnt:songs) {
+//			System.out.println(vnt);
+//		}
+//		
+//	}
 
 }
