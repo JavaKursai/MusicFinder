@@ -1,5 +1,7 @@
 package lt.baltic.talents.superhero.klounada.daos;
 
+import java.util.List;
+
 import lt.baltic.talents.superhero.klounada.models.User;
 
 public interface UserDao {
@@ -8,15 +10,13 @@ public interface UserDao {
 	
 	boolean create(User user);
 
-<<<<<<< HEAD
-=======
+
 	public List<User> getList();
 	
 	public List<User> getByAuthor();
 	
 	public List<User> getBySongName(String input);
 	
-	
-	
->>>>>>> master
 }
+	
+

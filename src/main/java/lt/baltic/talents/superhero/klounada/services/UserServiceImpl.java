@@ -1,5 +1,7 @@
 package lt.baltic.talents.superhero.klounada.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,6 +32,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void searchByInput(String input) {
 		userDao.getBySongName(input);
+	}
+
+	@Override
+	public List<User> getList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

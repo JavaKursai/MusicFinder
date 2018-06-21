@@ -40,16 +40,7 @@ public class BaseController {
 		System.out.println(filtras.getInputText());
 		return "hello/base";
 	}
-<<<<<<< HEAD
-=======
-	
-	
-	public void doGet(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException  {
 
-			     String id = req.getParameter("sersas");
-			     System.out.println(id);
-			}
->>>>>>> master
+
 
 }

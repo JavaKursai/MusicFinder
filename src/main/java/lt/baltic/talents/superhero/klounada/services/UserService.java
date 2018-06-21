@@ -1,5 +1,7 @@
 package lt.baltic.talents.superhero.klounada.services;
 
+import java.util.List;
+
 import lt.baltic.talents.superhero.klounada.models.User;
 
 public interface UserService {
@@ -8,11 +10,10 @@ public interface UserService {
 
 	boolean create(User user);
 
-<<<<<<< HEAD
-=======
+
 	List<User> getList();
 	
 	void searchByInput(String input);
 
->>>>>>> master
+
 }
