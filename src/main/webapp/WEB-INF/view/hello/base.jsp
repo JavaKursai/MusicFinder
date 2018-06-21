@@ -1,9 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,11 +14,14 @@
         <link href="<c:url value="/resources/css/Muzik.css" />" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <div id="container">
-                <div class="title"><h1>Muzika privalo išskelti ugnį iš žmogaus sielos.Muzika negali mąstyti, bet ji gali įkūnyti mintį</h1></div>
+        <header class="container">
+        
+        <img src="/resources/css/antonio-vivaldi.jpg" alt="Vivaldis" class="responsive" width="900" height="600">
+            
+            
+       <h1>Muzika privalo išskelti ugnį iš žmogaus sielos.Muzika negali mąstyti, bet ji gali įkūnyti mintį</h1>
                 
-            </div>
+           
         </header>
         <section class="Label">
             <br>
@@ -30,26 +31,33 @@
             
             
             <br>
-            <form>
-                    <div class="BendraPaieska">
-                    <input id="sersas" name="Search" placeholder="Paieska" type=""/><button type="button">kaip as jusu nekenciu</button>
-                </div>
-                <br>
-                <br>
-                
-                <select class="selectBox" >
-                    <option value="0" >Pagal ka rusiuot</option>
+            <form:form action="sersas" modelAttribute="filtras" method="POST">
+             <form:label path="inputText">jhhh</form:label>
+            <form:input path="inputText" /> <br><br>
+            
+             <input type="submit" value="Submit"/>
+            </form:form>
+            
+            <select class="selectBox" >
+
+	                    <option value="0" >Pagal ka rusiuot
+	                    </option>
                     <option value="1">Bendra paieska</option>
+                    <option value="2">Dainos pavadinimas ${profile.songName}
+
+                    <option value="0" >Pagal ką rūšiuot</option>
+                    
                     <option value="2">Dainos pavadinimas
+
                     </option>
                     <option value="3">Autorius/Grupe</option>
                 </select>
             
-            </form>
         </div>
         </section>
         <footer id="Endas">
-                <h1>Projekta ruose</h1>
+                
+                <p>Projektą ruošė:Zana,Mindaugas,Rokas,Arnoldas,Mantas,by direktorius Gintas.</p>
         </footer>
             
             
