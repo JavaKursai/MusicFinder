@@ -24,6 +24,6 @@ public class SpringController {
 		List<User> list = userService.getList();
 		
 		model.addAttribute("musuDainos", list);
-		return "login/index";
+		return "hello/base";
 	}
 }

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +36,7 @@ public class BaseController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String start(@ModelAttribute("filtras") String filtras, Model model) {
 		model.addAttribute("filtras", new Filtras());
-		System.out.println("Naujas");
+		//System.out.println("Naujas");
 		return "hello/base";
 	}
 	
@@ -43,6 +44,9 @@ public class BaseController {
 	public String start(@ModelAttribute("filtras") Filtras filtras, Model model) {
 		userService.searchByInput(filtras.getInputText());
 		System.out.println(filtras.getInputText());
+		List<User> list = userService.getBySongName(filtras.getInputText());
+		model.addAttribute("musuDainos", list);
+		
 		return "hello/base";
 	}
 	
