@@ -36,9 +36,8 @@
             <form>
                     <div class="BendraPaieska">
 
-                    <input id="sersas" name="sersas" placeholder="Paieska" type="text"/><button type="button">kaip as jusu nekenciu</button>
 
-                    <input id="sersas" name="Search" placeholder="Paieška" type=""/><button type="button">Eik!</button></input>
+                    <input id="sersas" name="Search" placeholder="Paieška" type="Text"/><button type="button">Eik!</button></input>
 
                 </div>
                 <br>
@@ -72,6 +71,6 @@
             
         <script src="testas.js"></script>
         <script type="jsCookie.js"></script>
-        <script src="jquery3.js"></script>    
+        <script src="jquery3.js"></script> 
         </body>
     </html>
