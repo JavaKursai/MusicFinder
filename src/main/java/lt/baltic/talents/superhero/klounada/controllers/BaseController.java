@@ -43,8 +43,10 @@ public class BaseController {
 	public String start(@ModelAttribute("filtras") Filtras filtras, Model model) {
 		userService.searchByInput(filtras.getInputText());
 		System.out.println(filtras.getInputText());
+		
 		return "hello/base";
 	}
+	
 	
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res)

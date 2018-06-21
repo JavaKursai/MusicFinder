@@ -52,8 +52,22 @@
                     </option>
                     <option value="3">Autorius/Grupe</option>
                 </select>
-            
         </div>
+        </section>
+        
+        <section>
+        	<h1> Musu dainos</h1>
+        	
+        	<c:if test="${not empty musuDainos}">
+
+		<ul>
+			<c:forEach var="listValue" items="${musuDainos}">
+				<li><span>Atlikejas:</span> ${listValue.author} <span>Pavadinimas:</span> ${listValue.songName}</li>
+			</c:forEach>
+		</ul>
+
+	</c:if>	
+        
         </section>
         <footer id="Endas">
                 
