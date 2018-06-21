@@ -35,10 +35,16 @@ public class UserServiceImpl implements UserService {
 		return userDao.getList();
 	}
 
-	@Transactional
+	@Transactional(readOnly = true)
 	@Override
 	public void searchByInput(String input) {
 		userDao.getBySongName(input);
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<User> getBySongName(String input) {
+		return userDao.getBySongName(input);
 	}
 
 }

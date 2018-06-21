@@ -58,15 +58,22 @@
         <section>
         	<h1> Musu dainos</h1>
         	
-        	<c:if test="${not empty musuDainos}">
-
-		<ul>
-			<c:forEach var="listValue" items="${musuDainos}">
-				<li><span>Atlikejas:</span> ${listValue.author} <span>Pavadinimas:</span> ${listValue.songName}</li>
-			</c:forEach>
-		</ul>
-
-	</c:if>	
+        <c:if test="${not empty musuDainos}">
+        
+	        <table border="1">
+			  <tr>
+			    <th>Atlikejas</th>
+			    <th>Pavadinimas</th>
+			  </tr>
+			  <c:forEach var="listValue" items="${musuDainos}">
+			  <tr>
+			    <td>${listValue.author}</td>
+			    <td>${listValue.songName}</td>
+			  </tr>
+			  </c:forEach>
+	  		</table>
+        
+        </c:if>	
         
         </section>
         <footer id="Endas">
