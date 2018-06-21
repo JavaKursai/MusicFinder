@@ -44,15 +44,5 @@ public class UserDaoImpl implements UserDao {
 		
 		return false;
 	}
-	
-	public List<User> getList() {
-		@SuppressWarnings("unchecked")
-		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User order by popularity desc");
-		List<User> listas = query.getResultList();
-		for(User a: listas) {
-			System.out.println(a.toString());
-		}
-		return listas;
-	}
 
 }

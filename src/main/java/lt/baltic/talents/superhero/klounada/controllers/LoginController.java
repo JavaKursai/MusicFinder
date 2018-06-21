@@ -20,10 +20,9 @@ public class LoginController {
 
 	@RequestMapping(value = "testCreate", method = RequestMethod.GET)
 	public String login(Model model) {
-		//userService.create(new User("OOOOO", "xzxzcxzcxzc".toCharArray(), 456));
-		boolean login = userService.login();
+		userService.create(new User("OOOOO", "xzxzcxzcxzc".toCharArray(), 456));
+
 		return "login/failure";
-		//nigalima
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
@@ -31,20 +30,20 @@ public class LoginController {
 			@RequestParam(value = "songName", required = false) String songParam, RedirectAttributes redirectAttributes,
 			@RequestParam(value = "popularity", required = false) int popularityParam) {
 
-//		if (songParam == null || songParam == null) {
-//			return "Can't find your request or nothing was typed in";
-//		}
+		if (songParam == null || songParam == null) {
+			return "Can't find your request or nothing was typed in";
+		}
 
-	//	User user = new User(authorParam, songParam.toCharArray(), popularityParam);
+		User user = new User(authorParam, songParam.toCharArray(), popularityParam);
 
-		boolean login = userService.login();
+		boolean login = userService.login(user);
 
-//		if (login) {
-//			redirectAttributes.addFlashAttribute("user", user);
-//			return "redirect:/";
-//		}
-//		return "Can't find your request or nothing was typed in";
-		
-		return "";
+		if (login) {
+			redirectAttributes.addFlashAttribute("user", user);
+			return "redirect:/";
+		}
+
+		return "Can't find your request or nothing was typed in";
 	}
+
 }

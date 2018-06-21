@@ -1,13 +1,8 @@
 package lt.baltic.talents.superhero.klounada.controllers;
 
-import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,11 +36,5 @@ public class BaseController {
 		
 		return "hello/base";
 	}
-	public void doGet(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException  {
-
-			     String id = req.getParameter("sersas");
-			     System.out.println(id);
-			}
 
 }
