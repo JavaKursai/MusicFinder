@@ -3,7 +3,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,11 +59,6 @@
 	</footer>
 
 
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-
-	<script src="testas.js"></script>
-	<script type="jsCookie.js"></script>
-	<script src="jquery3.js"></script>
+	
 </body>
 </html>

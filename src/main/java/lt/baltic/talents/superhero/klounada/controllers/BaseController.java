@@ -18,29 +18,35 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import lt.baltic.talents.superhero.klounada.helpers.MessageHelper;
+import lt.baltic.talents.superhero.klounada.models.Filtras;
 import lt.baltic.talents.superhero.klounada.models.User;
+import lt.baltic.talents.superhero.klounada.services.UserService;
 
 @Controller
 public class BaseController {
 	
 	@Autowired
 	private MessageHelper helper;
+	
+	@Autowired
+	private UserService userService;
+	
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String start(@ModelAttribute("filtras") String filtras, Model model) {
-		LocalDateTime date = LocalDateTime.now();
-		model.addAttribute("now", Date.from(date.atZone(ZoneId.systemDefault()).toInstant()));
-
-		String operatingSystem = System.getProperty("os.name");
-		model.addAttribute("operatingSystem", operatingSystem);
-		
-		String javaVersion = System.getProperty("java.version");
-		model.addAttribute("javaVersion", javaVersion);
-		
-		System.out.println(helper.getMessage("message.hello"));
-		
+		model.addAttribute("filtras", new Filtras());
+		System.out.println("Naujas");
 		return "hello/base";
 	}
+	
+	@RequestMapping(value = "/sersas", method = RequestMethod.POST)
+	public String start(@ModelAttribute("filtras") Filtras filtras, Model model) {
+		userService.searchByInput(filtras.getInputText());
+		System.out.println(filtras.getInputText());
+		return "hello/base";
+	}
+	
+	
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException  {
 

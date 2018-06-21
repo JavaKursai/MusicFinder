@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import lt.baltic.talents.superhero.klounada.daos.UserDao;
+import lt.baltic.talents.superhero.klounada.models.Filtras;
 import lt.baltic.talents.superhero.klounada.models.User;
 
 @Service
@@ -14,7 +15,7 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserDao userDao;
-
+	
 	@Transactional(readOnly = true)
 	@Override
 	public boolean login() {
@@ -32,6 +33,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> getList() {
 		return userDao.getList();
+	}
+
+	@Transactional
+	@Override
+	public void searchByInput(String input) {
+		userDao.getBySongName(input);
 	}
 
 }
