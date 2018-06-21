@@ -36,7 +36,6 @@
             <form>
                     <div class="BendraPaieska">
 
-                    <input id="sersas" name="sersas" placeholder="Paieska" type="text"/><button type="button">kaip as jusu nekenciu</button>
 
                     <input id="sersas" name="Search" placeholder="Paieška" type=""/><button type="button">Eik!</button></input>
 
