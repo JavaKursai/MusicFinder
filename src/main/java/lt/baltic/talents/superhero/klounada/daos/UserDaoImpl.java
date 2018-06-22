@@ -63,7 +63,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<User> getByAuthor(String input) {
 		@SuppressWarnings("unchecked")
-		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where author = ?1 order by popularity desc");
+		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where author like ?1 order by popularity desc");
 		
 		query.setParameter(1, "%"+input+"%");
 		
