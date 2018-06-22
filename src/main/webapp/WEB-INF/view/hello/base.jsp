@@ -37,17 +37,17 @@
 
 		</div>
 		<div class="playlist">
-			<h1>Musu dainos</h1>
+			<h1>Rastos dainos      </h1>
 
 			<c:if test="${not empty musuDainos}">
 
 				<table border="1">
-					<tr>
+					<tr class="tbl">
 						<th>Atlikejas</th>
 						<th>Pavadinimas</th>
 					</tr>
 					<c:forEach var="listValue" items="${musuDainos}">
-						<tr>
+						<tr  class="tbl">
 							<td>${listValue.author}</td>
 							<td>${listValue.songName}</td>
 						</tr>
