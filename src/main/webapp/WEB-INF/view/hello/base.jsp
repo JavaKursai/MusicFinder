@@ -40,17 +40,9 @@
             
             <select class="selectBox" >
 
-	                    <option value="0" >Pagal ka rusiuot
-	                    </option>
-                    <option value="1">Bendra paieska</option>
-                    <option value="2">Dainos pavadinimas ${profile.songName}
-
-                    <option value="0" >Pagal ką rūšiuot</option>
-                    
-                    <option value="2">Dainos pavadinimas
-
-                    </option>
-                    <option value="3">Autorius/Grupe</option>
+	                <option value="0" >Pagal ka rusiuot</option>
+                    <option value="1">Dainos pavadinimas</option>
+                    <option value="2">Autorius/Grupe</option>
                 </select>
             
         </div>

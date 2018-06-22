@@ -35,7 +35,6 @@ public class BaseController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String start(@ModelAttribute("filtras") String filtras, Model model) {
 		model.addAttribute("filtras", new Filtras());
-		System.out.println("Naujas");
 		return "hello/base";
 	}
 	
