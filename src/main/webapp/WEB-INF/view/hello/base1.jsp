@@ -16,13 +16,7 @@
 			<div>GRAMMZ</div>
 			<h5>your everyday music portal</h5>
 			<i class="fas fa-music"></i>
-		</div>
-		<form action="#">
-			<input name="Username" type="text" placeholder="Username" required>
-			<input type="psw" placeholder="Password" required>
-			<input type="submit" value="Register">
-			<input type="button" value="Log in">
-		</form>
+		</div>		
 	</header>
 	<body>
 		<div class="parent_body">
