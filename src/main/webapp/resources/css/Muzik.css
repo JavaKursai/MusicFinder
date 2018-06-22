@@ -7,159 +7,112 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-margin: 0;
-padding: 0;
-border: 0;
-font-size: 100%;
-font: italic;
-vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-/ HTML5 display-role reset for older browsers /
-article, aside, details, figcaption, figure,
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-display: block;
+	display: block;
 }
 body {
-line-height: 1;
+	line-height: 1;
 }
 ol, ul {
-list-style: none;
+	list-style: none;
 }
 blockquote, q {
-quotes: none;
+	quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-content: '';
-content: none;
+	content: '';
+	content: none;
 }
 table {
-border-collapse: collapse;
-border-spacing: 0;
-}
-body{
-width: 100%;
-}
-#container{
-width: 100%;
-
-
-}
-.responsive {
-    width: 100%;
-    height: auto;
-    }
-
-::placeholder {
-    color: red;
-    opacity: 1; /* Firefox */
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-h1{
-font-size: 40px;
-color: white;
-text-shadow: 3px 2px red;
-font-style: italic;
-text-align: center;
-position: absolute;
-bottom: 169px;
-
-}
-button{
-font-size: 30px;
-height: 74px;
-width: 100px;
-font-style: italic;
-color: red;
-}
-.Label{
-height: 500px;
-width: 100%;
-font-style: italic;
-text-shadow: 3px 2px red;
-text-align: center;
-background-color: #b28a33;
-}
-.BendraPaieska{
-margin-left: 80px;
-pading-left: 80px;
-display: flex;
-align-items: center;
-padding-top: 90px;
-color: red;
-}
-.selectBox{
-	
-	margin-left:-24px;
-height: 100px;
-width: 300px;
-border-style: none;
-font-style: italic;
-color: red;
-font-size: 30px;
-
-/*border-collapse: collapse;*/
-}
-#sersas{
-max-width: 400px;
-height: 68px;
-font-style: italic;
-color: red;
-font-size: 30px;
+header{
+	height: 130px;
+	background-color: #4D4DEE;
+	display: flex;
+	flex-direction: column;
 }
 
-.blokas{
-width: 100%;
-height: 500px;
-align-items: center;
+header div{
+	padding-top: 5px;
+	font-size: 25px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
 }
-form{
-display: flex;
-height: 240px;
 
-flex-direction: column;
-width: 400px;
-align-items: center;
+header h5{
+	font-size: 15px;
+	display: flex;
+	justify-content: center;
+	align-content: flex-start;
+	color: white;
+	font-style: italic;
+	padding-bottom: 10px;
 }
-p{
-font-size: 80px;
-}
-label{
-/*font-size: 500px;*/
-}
-.Label{
-	width: 100%;
-	height: 500px;
+
+header form{
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
 	align-items: center;
-
-}
-#Endas{
-width: 100%;
-height: 269px;
-background-color: black;
-}
-#Endas p{
-color: white;
-font-style: italic;
-font-size: 21px;
-text-align: right;
-padding-top: 210px;
-
-
-
+	padding-right: 20px;
 }
 
+footer div{
+	position: fixed;
+	font-size: 12px;
+	 left: 0;
+    bottom: 0;
+    width: 100%;
+	height: 100px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #4D4DEE;
+}
 
+body{
+}
 
+.parent_body{
+	display: flex;
+	flex-direction: row;
+}
 
+.search{
+	padding-top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: top;
+	align-content: center;
+	height: 440px;
+	width: 50%;
+}
 
-
-
-
-
-
-
+div.playlist{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 50%;
+	/*padding: 0px 30px;*/
+}

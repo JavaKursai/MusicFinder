@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import lt.baltic.talents.superhero.klounada.models.User;
 import lt.baltic.talents.superhero.klounada.models.Vartotojas;
-import lt.baltic.talents.superhero.klounada.services.UserService;
 import lt.baltic.talents.superhero.klounada.services.VarService;
 
 @Controller
