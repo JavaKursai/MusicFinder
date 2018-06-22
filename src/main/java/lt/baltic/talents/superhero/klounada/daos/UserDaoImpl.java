@@ -65,7 +65,7 @@ public class UserDaoImpl implements UserDao {
 		@SuppressWarnings("unchecked")
 		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where author = ?1 order by popularity desc");
 		
-		query.setParameter(1, input);
+		query.setParameter(1, "%"+input+"%");
 		
 		List<User> listas = query.getResultList();
 		for(User a: listas) {
@@ -79,9 +79,9 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<User> getBySongName(String input) {
 		@SuppressWarnings("unchecked")
-		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where songName = ?1 order by popularity desc");
+		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where songName like ?1 order by popularity desc");
 		
-		query.setParameter(1, input);
+		query.setParameter(1,  "%"+input+"%");
 		
 		List<User> listas = query.getResultList();
 		for(User a: listas) {
