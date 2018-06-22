@@ -46,5 +46,11 @@ public class UserServiceImpl implements UserService {
 	public List<User> getBySongName(String input) {
 		return userDao.getBySongName(input);
 	}
+	
+	@Transactional(readOnly = true)
+	@Override
+	public List<User> getByAuthor(String input) {
+		return userDao.getByAuthor(input);
+	}
 
 }

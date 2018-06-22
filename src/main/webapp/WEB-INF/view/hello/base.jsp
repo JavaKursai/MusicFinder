@@ -35,23 +35,15 @@
              <form:label path="inputText">jhhh</form:label>
             <form:input path="inputText" /> <br><br>
             
+            <form:select path="inputInt" class="selectBox">
+                    <form:option value="1">Ieskoti pagal Dainos pavadinimas</form:option>
+                    <form:option value="2">Ieskoti pagal Autorius/Grupe</form:option>
+            </form:select>
+            
              <input type="submit" value="Submit"/>
             </form:form>
             
-            <select class="selectBox" >
-
-	                    <option value="0" >Pagal ka rusiuot
-	                    </option>
-                    <option value="1">Bendra paieska</option>
-                    <option value="2">Dainos pavadinimas ${profile.songName}
-
-                    <option value="0" >Pagal ką rūšiuot</option>
-                    
-                    <option value="2">Dainos pavadinimas
-
-                    </option>
-                    <option value="3">Autorius/Grupe</option>
-                </select>
+            
         </div>
         </section>
         
