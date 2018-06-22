@@ -14,6 +14,8 @@ public interface UserService {
 	
 	List<User> getBySongName(String input);
 	
+	List<User> getByAuthor(String input);
+	
 	void searchByInput(String input);
 
 }

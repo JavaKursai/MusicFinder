@@ -36,7 +36,6 @@ public class BaseController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String start(@ModelAttribute("filtras") String filtras, Model model) {
 		model.addAttribute("filtras", new Filtras());
-		//System.out.println("Naujas");
 		return "hello/base";
 	}
 	
@@ -44,8 +43,16 @@ public class BaseController {
 	public String start(@ModelAttribute("filtras") Filtras filtras, Model model) {
 		userService.searchByInput(filtras.getInputText());
 		System.out.println(filtras.getInputText());
-		List<User> list = userService.getBySongName(filtras.getInputText());
-		model.addAttribute("musuDainos", list);
+		System.out.println(filtras.getInputInt());
+		if(filtras.getInputInt().equals("1")) {
+			List<User> list = userService.getBySongName(filtras.getInputText());
+			model.addAttribute("musuDainos", list);
+		}
+		
+		if(filtras.getInputInt().equals("2")) {
+			List<User> list = userService.getByAuthor(filtras.getInputText());
+			model.addAttribute("musuDainos", list);
+		}
 		
 		return "hello/base";
 	}
