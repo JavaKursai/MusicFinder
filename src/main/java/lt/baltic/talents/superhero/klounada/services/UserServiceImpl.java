@@ -41,12 +41,8 @@ public class UserServiceImpl implements UserService {
 		userDao.getBySongName(input);
 	}
 
-<<<<<<< HEAD
-	@Override
-	public List<User> getList() {
-		// TODO Auto-generated method stub
-		return null;
-=======
+	
+
 	@Transactional(readOnly = true)
 	@Override
 	public List<User> getBySongName(String input) {
@@ -57,7 +53,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> getByAuthor(String input) {
 		return userDao.getByAuthor(input);
->>>>>>> master
+
 	}
 
 }

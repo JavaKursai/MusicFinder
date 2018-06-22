@@ -56,10 +56,7 @@ public class BaseController {
 		
 		return "hello/base";
 	}
-<<<<<<< HEAD
 
-
-=======
 	
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
@@ -68,6 +65,6 @@ public class BaseController {
 			     String id = req.getParameter("sersas");
 			     System.out.println(id);
 			}
->>>>>>> master
+
 
 }

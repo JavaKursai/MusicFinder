@@ -10,10 +10,7 @@ public interface UserService {
 
 	boolean create(User user);
 
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 	List<User> getList();
 	
 	List<User> getBySongName(String input);
@@ -22,8 +19,5 @@ public interface UserService {
 	
 	void searchByInput(String input);
 
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 }

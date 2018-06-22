@@ -48,10 +48,7 @@ public class UserDaoImpl implements UserDao {
 		
 		return false;
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 	
 	@Override
 	public List<User> getList() {
@@ -93,12 +90,6 @@ public class UserDaoImpl implements UserDao {
 		}
 		return listas;
 	}
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 
 
 	
