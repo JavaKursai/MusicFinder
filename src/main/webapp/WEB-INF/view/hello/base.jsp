@@ -42,8 +42,14 @@
                     <form:option value="2">Ieskoti pagal Autorius/Grupe</form:option>
             </form:select>
             
+            <form:select path="inputInt" class="selectBox">
+                    <form:option value="1">Ieskoti pagal Dainos pavadinimas</form:option>
+                    <form:option value="2">Ieskoti pagal Autorius/Grupe</form:option>
+            </form:select>
+            
              <input type="submit" value="Submit"/>
             </form:form>
+<<<<<<< HEAD
 		</div>
 		<div class="playlist">
 			<div>insert playlist here</div>
@@ -62,3 +68,53 @@
 <script src="jquery3.js"></script>
 </body>
 </html>
+=======
+            
+<<<<<<< HEAD
+            <select class="selectBox" >
+
+	                <option value="0" >Pagal ka rusiuot</option>
+                    <option value="1">Dainos pavadinimas</option>
+                    <option value="2">Autorius/Grupe</option>
+                </select>
+=======
+>>>>>>> 6a7069c1df6101711991b81e1f657a240cdeb3ba
+            
+        </div>
+        </section>
+        
+        <section>
+        	<h1> Musu dainos</h1>
+        	
+        <c:if test="${not empty musuDainos}">
+        
+	        <table border="1">
+			  <tr>
+			    <th>Atlikejas</th>
+			    <th>Pavadinimas</th>
+			  </tr>
+			  <c:forEach var="listValue" items="${musuDainos}">
+			  <tr>
+			    <td>${listValue.author}</td>
+			    <td>${listValue.songName}</td>
+			  </tr>
+			  </c:forEach>
+	  		</table>
+        
+        </c:if>	
+        
+        </section>
+        <footer id="Endas">
+                
+                <p>Projektą ruošė:Zana,Mindaugas,Rokas,Arnoldas,Mantas,by direktorius Gintas.</p>
+        </footer>
+            
+            
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+            
+        <script src="testas.js"></script>
+        <script type="jsCookie.js"></script>
+        <script src="jquery3.js"></script>    
+        </body>
+    </html>
+>>>>>>> master

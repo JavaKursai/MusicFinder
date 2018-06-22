@@ -61,17 +61,17 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	@Override
-	public List<User> getByAuthor() {
+	public List<User> getByAuthor(String input) {
 		@SuppressWarnings("unchecked")
 		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where author = ?1 order by popularity desc");
 		
-		//query.setParameter(1, input);
+		query.setParameter(1, input);
 		
 		List<User> listas = query.getResultList();
 		for(User a: listas) {
 			System.out.println(a.toString());
 		}
-		return null;
+		return listas;
 	}
 
 
