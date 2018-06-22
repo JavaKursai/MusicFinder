@@ -11,4 +11,11 @@ public interface UserDao {
 	boolean create(User user);
 
 	public List<User> getList();
+	
+	public List<User> getByAuthor(String input);
+	
+	public List<User> getBySongName(String input);
+	
+	
+	
 }

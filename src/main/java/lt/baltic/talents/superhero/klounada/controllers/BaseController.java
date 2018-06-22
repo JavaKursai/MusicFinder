@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -18,29 +19,45 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import lt.baltic.talents.superhero.klounada.helpers.MessageHelper;
+import lt.baltic.talents.superhero.klounada.models.Filtras;
 import lt.baltic.talents.superhero.klounada.models.User;
+import lt.baltic.talents.superhero.klounada.services.UserService;
 
 @Controller
 public class BaseController {
 	
 	@Autowired
 	private MessageHelper helper;
+	
+	@Autowired
+	private UserService userService;
+	
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String start(@ModelAttribute("filtras") String filtras, Model model) {
-		LocalDateTime date = LocalDateTime.now();
-		model.addAttribute("now", Date.from(date.atZone(ZoneId.systemDefault()).toInstant()));
-
-		String operatingSystem = System.getProperty("os.name");
-		model.addAttribute("operatingSystem", operatingSystem);
+		model.addAttribute("filtras", new Filtras());
+		return "hello/base";
+	}
+	
+	@RequestMapping(value = "/sersas", method = RequestMethod.POST)
+	public String start(@ModelAttribute("filtras") Filtras filtras, Model model) {
+		userService.searchByInput(filtras.getInputText());
+		System.out.println(filtras.getInputText());
+		System.out.println(filtras.getInputInt());
+		if(filtras.getInputInt().equals("1")) {
+			List<User> list = userService.getBySongName(filtras.getInputText());
+			model.addAttribute("musuDainos", list);
+		}
 		
-		String javaVersion = System.getProperty("java.version");
-		model.addAttribute("javaVersion", javaVersion);
-		
-		System.out.println(helper.getMessage("message.hello"));
+		if(filtras.getInputInt().equals("2")) {
+			List<User> list = userService.getByAuthor(filtras.getInputText());
+			model.addAttribute("musuDainos", list);
+		}
 		
 		return "hello/base";
 	}
+	
+	
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException  {
 

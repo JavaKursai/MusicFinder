@@ -11,5 +11,11 @@ public interface UserService {
 	boolean create(User user);
 
 	List<User> getList();
+	
+	List<User> getBySongName(String input);
+	
+	List<User> getByAuthor(String input);
+	
+	void searchByInput(String input);
 
 }
