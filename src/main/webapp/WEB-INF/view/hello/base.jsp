@@ -43,15 +43,6 @@
              <input type="submit" value="Submit"/>
             </form:form>
             
-<<<<<<< HEAD
-            <select class="selectBox" >
-
-	                <option value="0" >Pagal ka rusiuot</option>
-                    <option value="1">Dainos pavadinimas</option>
-                    <option value="2">Autorius/Grupe</option>
-                </select>
-=======
->>>>>>> 6a7069c1df6101711991b81e1f657a240cdeb3ba
             
         </div>
         </section>
