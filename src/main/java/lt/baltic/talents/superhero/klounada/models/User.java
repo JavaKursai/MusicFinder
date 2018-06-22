@@ -19,11 +19,11 @@ public class User implements Serializable {
 	@Column(name = "SONG_ID")
 	private Long id;
 
-	@Column(name = "AUTHOR_NAME", unique = true)
+	@Column(name = "AUTHOR_NAME")
 	private String author;
 
 	@Column(name = "SONG_NAME")
-	private char[] songName;
+	private String songName;
 
 	@Column(name = "SONG_POPULARITY")
 	private int popularity;
@@ -31,9 +31,9 @@ public class User implements Serializable {
 	public User() {
 	}
 
-	public User(String author, char[] songName, int popularity) {
+	public User(String author, String songName, int popularity) {
 		this.author = author;
-		this.songName = songName.clone();
+		this.songName = songName;
 		this.popularity = popularity;
 	}
 
@@ -53,11 +53,11 @@ public class User implements Serializable {
 		this.author = author;
 	}
 
-	public char[] getSongName() {
+	public String getSongName() {
 		return songName;
 	}
 
-	public void setSongName(char[] songName) {
+	public void setSongName(String songName) {
 		this.songName = songName;
 	}
 
@@ -71,7 +71,7 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", author=" + author + ", songName=" + Arrays.toString(songName) + ", popularity="
+		return "User [id=" + id + ", author=" + author + ", songName=" + songName + ", popularity="
 				+ popularity + "]";
 	}
 }

@@ -2,7 +2,11 @@ package lt.baltic.talents.superhero.klounada.models;
 
 public class Filtras {
 	private String inputText;
+<<<<<<< HEAD
 	private int inputInt;
+=======
+	private String inputInt;
+>>>>>>> master
 	
 	public Filtras() {
 		
@@ -21,9 +25,19 @@ public class Filtras {
 		this.inputInt = inputInt;
 	}
 
+<<<<<<< HEAD
 	public int getInputInt() {
 		return inputInt;
 	}
+=======
+	public String getInputInt() {
+		return inputInt;
+	}
+
+	public void setInputInt(String inputInt) {
+		this.inputInt = inputInt;
+	}
+>>>>>>> master
 	
 	
 }

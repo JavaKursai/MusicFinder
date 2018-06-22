@@ -1,8 +1,14 @@
 package lt.baltic.talents.superhero.klounada.controllers;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,7 +36,6 @@ public class BaseController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String start(@ModelAttribute("filtras") String filtras, Model model) {
 		model.addAttribute("filtras", new Filtras());
-		System.out.println("Naujas");
 		return "hello/base";
 	}
 	
@@ -38,9 +43,31 @@ public class BaseController {
 	public String start(@ModelAttribute("filtras") Filtras filtras, Model model) {
 		userService.searchByInput(filtras.getInputText());
 		System.out.println(filtras.getInputText());
+		System.out.println(filtras.getInputInt());
+		if(filtras.getInputInt().equals("1")) {
+			List<User> list = userService.getBySongName(filtras.getInputText());
+			model.addAttribute("musuDainos", list);
+		}
+		
+		if(filtras.getInputInt().equals("2")) {
+			List<User> list = userService.getByAuthor(filtras.getInputText());
+			model.addAttribute("musuDainos", list);
+		}
+		
 		return "hello/base";
 	}
+<<<<<<< HEAD
 
 
+=======
+	
+	
+	public void doGet(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException  {
+
+			     String id = req.getParameter("sersas");
+			     System.out.println(id);
+			}
+>>>>>>> master
 
 }

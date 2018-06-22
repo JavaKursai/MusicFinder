@@ -18,8 +18,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Transactional(readOnly = true)
 	@Override
-	public boolean login(User user) {
-		return userDao.login(user);
+	public boolean login() {
+		userDao.getList();
+		return false;
 	}
 
 	@Transactional
@@ -27,17 +28,36 @@ public class UserServiceImpl implements UserService {
 	public boolean create(User user) {
 		return userDao.create(user);
 	}
+	
+	@Transactional(readOnly = true)
+	@Override
+	public List<User> getList() {
+		return userDao.getList();
+	}
 
-	@Transactional
+	@Transactional(readOnly = true)
 	@Override
 	public void searchByInput(String input) {
 		userDao.getBySongName(input);
 	}
 
+<<<<<<< HEAD
 	@Override
 	public List<User> getList() {
 		// TODO Auto-generated method stub
 		return null;
+=======
+	@Transactional(readOnly = true)
+	@Override
+	public List<User> getBySongName(String input) {
+		return userDao.getBySongName(input);
+	}
+	
+	@Transactional(readOnly = true)
+	@Override
+	public List<User> getByAuthor(String input) {
+		return userDao.getByAuthor(input);
+>>>>>>> master
 	}
 
 }
