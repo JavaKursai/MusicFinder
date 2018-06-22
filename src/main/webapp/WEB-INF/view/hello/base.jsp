@@ -35,17 +35,47 @@
              <form:label path="inputText">jhhh</form:label>
             <form:input path="inputText" /> <br><br>
             
+            <form:select path="inputInt" class="selectBox">
+                    <form:option value="1">Ieskoti pagal Dainos pavadinimas</form:option>
+                    <form:option value="2">Ieskoti pagal Autorius/Grupe</form:option>
+            </form:select>
+            
              <input type="submit" value="Submit"/>
             </form:form>
             
+<<<<<<< HEAD
             <select class="selectBox" >
 
 	                <option value="0" >Pagal ka rusiuot</option>
                     <option value="1">Dainos pavadinimas</option>
                     <option value="2">Autorius/Grupe</option>
                 </select>
+=======
+>>>>>>> 6a7069c1df6101711991b81e1f657a240cdeb3ba
             
         </div>
+        </section>
+        
+        <section>
+        	<h1> Musu dainos</h1>
+        	
+        <c:if test="${not empty musuDainos}">
+        
+	        <table border="1">
+			  <tr>
+			    <th>Atlikejas</th>
+			    <th>Pavadinimas</th>
+			  </tr>
+			  <c:forEach var="listValue" items="${musuDainos}">
+			  <tr>
+			    <td>${listValue.author}</td>
+			    <td>${listValue.songName}</td>
+			  </tr>
+			  </c:forEach>
+	  		</table>
+        
+        </c:if>	
+        
         </section>
         <footer id="Endas">
                 
