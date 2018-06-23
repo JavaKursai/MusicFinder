@@ -28,6 +28,7 @@
 				<form:input path="inputText" />
 				
 				<form:select path="inputInt" class="selectBox">
+					<form:option value="0">Bendra Paieska</form:option>
 					<form:option value="1">Ieskoti pagal Dainos pavadinimas</form:option>
 					<form:option value="2">Ieskoti pagal Autorius/Grupe</form:option>
 				</form:select>
