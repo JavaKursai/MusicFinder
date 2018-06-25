@@ -45,8 +45,8 @@ public class BaseController {
 	@RequestMapping(value = "/sersas", method = RequestMethod.POST)
 	public String start(@ModelAttribute("filtras") Filtras filtras, Model model) {
 		userService.searchByInput(filtras.getInputText());
-//		System.out.println(filtras.getInputText());
-//		System.out.println(filtras.getInputInt());
+		System.out.println(filtras.getInputText());
+		System.out.println(filtras.getInputInt());
 		if(filtras.getInputInt().equals("1")) {
 			List<User> list = userService.getBySongName(filtras.getInputText());
 			model.addAttribute("musuDainos", list);
