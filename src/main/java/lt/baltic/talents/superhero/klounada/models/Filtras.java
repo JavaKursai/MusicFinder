@@ -3,8 +3,6 @@ package lt.baltic.talents.superhero.klounada.models;
 public class Filtras {
 	private String inputText;
 
-	private String Int;
-
 	private String inputInt;
 
 	
