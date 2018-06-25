@@ -9,6 +9,7 @@
 <meta name="descprition" content="">
 <meta name="keywords" content="">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<<<<<<< HEAD
 <title>GRAMMZ music portal</title>
 <link rel="stylesheet" href="Muzik.css">
 <link href="<c:url value="/resources/css/Muzik.css" />" rel="stylesheet">
@@ -108,4 +109,65 @@
         <script src="jquery3.js"></script>    
         </body>
     </html>
+>>>>>>> master
+=======
+<title>Pixel Perfect</title>
+<link rel="stylesheet" href="Muzik.css">
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="header_box">
+			<div>GRAMMZ</div>
+			<h5>your everyday music portal</h5>
+			<i class="fas fa-music"></i>
+		</div>
+	</header>
+	<div class="parent_body">
+		<div class="search">
+			<form:form action="sersas" modelAttribute="filtras" method="POST">
+				<form:label path="inputText">Iveskite</form:label>
+				<form:input path="inputText" />
+				
+				<form:select path="inputInt" class="selectBox">
+					<form:option value="0">Bendra Paieska</form:option>
+					<form:option value="1">Ieskoti pagal Dainos pavadinimas</form:option>
+					<form:option value="2">Ieskoti pagal Autorius/Grupe</form:option>
+				</form:select>
+
+				<input type="submit" value="Submit" />
+			</form:form>
+
+		</div>
+		<div class="playlist">
+			<h1>Rastos dainos      </h1>
+
+			<c:if test="${not empty musuDainos}">
+
+				<table border="1">
+					<tr class="tbl">
+						<th>Atlikejas</th>
+						<th>Pavadinimas</th>
+					</tr>
+					<c:forEach var="listValue" items="${musuDainos}">
+						<tr  class="tbl">
+							<td>${listValue.author}</td>
+							<td>${listValue.songName}</td>
+						</tr>
+					</c:forEach>
+				</table>
+
+			</c:if>
+
+
+		</div>
+	</div>
+
+
+	<footer>
+		<div>GRAMMZ&nbsp; @ &nbsp;2018</div>
+	</footer>
+
+</body>
+</html>
 >>>>>>> master

@@ -92,10 +92,20 @@ body {
 	
 }
 
+<<<<<<< HEAD
 .parent_body {
 	display: flex;
 	flex-direction: row;
 }
+=======
+.tbl{
+	border: 1px solid red;
+	width: 50%;
+	background-color: black;
+	
+}
+
+>>>>>>> master
 
 .search {
 	padding-top: 20px;
