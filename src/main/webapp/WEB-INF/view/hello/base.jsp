@@ -28,6 +28,7 @@
 				<form:input path="inputText" />
 				
 				<form:select path="inputInt" class="selectBox">
+					<form:option value="0">Bendra Paieska</form:option>
 					<form:option value="1">Ieskoti pagal Dainos pavadinimas</form:option>
 					<form:option value="2">Ieskoti pagal Autorius/Grupe</form:option>
 				</form:select>
@@ -37,17 +38,17 @@
 
 		</div>
 		<div class="playlist">
-			<h1>Musu dainos</h1>
+			<h1>Rastos dainos      </h1>
 
 			<c:if test="${not empty musuDainos}">
 
 				<table border="1">
-					<tr>
+					<tr class="tbl">
 						<th>Atlikejas</th>
 						<th>Pavadinimas</th>
 					</tr>
 					<c:forEach var="listValue" items="${musuDainos}">
-						<tr>
+						<tr  class="tbl">
 							<td>${listValue.author}</td>
 							<td>${listValue.songName}</td>
 						</tr>

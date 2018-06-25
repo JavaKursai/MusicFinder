@@ -116,3 +116,17 @@ div.playlist{
 	width: 50%;
 	/*padding: 0px 30px;*/
 }
+.tbl{
+	width: 100%;
+	
+
+}
+h1{
+	padding-right: 1.2rem;
+}
+
+td{
+	padding-left: 1.1rem;
+	padding-top:1.2rem;
+	
+}

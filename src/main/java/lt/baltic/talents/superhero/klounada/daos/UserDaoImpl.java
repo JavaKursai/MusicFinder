@@ -64,9 +64,9 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<User> getByAuthor(String input) {
 		@SuppressWarnings("unchecked")
-		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where author = ?1 order by popularity desc");
+		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where author like ?1 order by popularity desc");
 		
-		query.setParameter(1, input);
+		query.setParameter(1, "%"+toTitleCase(input)+"%");
 		
 		List<User> listas = query.getResultList();
 		for(User a: listas) {
@@ -80,9 +80,9 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<User> getBySongName(String input) {
 		@SuppressWarnings("unchecked")
-		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where songName = ?1 order by popularity desc");
+		TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User where songName like ?1 order by popularity desc");
 		
-		query.setParameter(1, input);
+		query.setParameter(1,  "%"+toTitleCase(input)+"%");
 		
 		List<User> listas = query.getResultList();
 		for(User a: listas) {
@@ -90,6 +90,21 @@ public class UserDaoImpl implements UserDao {
 		}
 		return listas;
 	}
+	
+	public static String toTitleCase(String givenString) {
+		
+	    String[] arr = givenString.toLowerCase().trim().split(" ");
+	    System.out.println(arr);
+	    StringBuffer sb = new StringBuffer();
+
+	    for (int i = 0; i < arr.length; i++) {
+	        sb.append(Character.toUpperCase(arr[i].charAt(0)))
+	            .append(arr[i].substring(1)).append(" ");
+	    }
+	    
+	    System.out.println(sb.toString().trim());
+	    return sb.toString().trim();
+	}  
 
 
 	
